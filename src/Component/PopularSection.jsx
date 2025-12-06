@@ -5,7 +5,7 @@ const PopularSection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/service")
+    fetch("https://backend-five-mu-76.vercel.app/service")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch services");

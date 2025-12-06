@@ -17,7 +17,7 @@ const Servicedetails = () => {
     const fetchService = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:4000/service/${id}`);
+        const res = await axios.get(`https://backend-five-mu-76.vercel.app/service/${id}`);
 
         if (!res.data || res.data.error) {
           setError("Service not found");
@@ -66,7 +66,7 @@ const Servicedetails = () => {
     console.log("Sending request data:", requestData);
 
     try {
-      const response = await fetch("http://localhost:4000/orders", {
+      const response = await fetch("https://backend-five-mu-76.vercel.app/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestData),

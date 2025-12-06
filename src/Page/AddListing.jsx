@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, {  useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+
 
 const initialListingState = {
   name: "",
@@ -17,6 +18,7 @@ const initialListingState = {
 
 const AddListing = () => {
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   const [listingData, setListingData] = useState(initialListingState);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +38,7 @@ const AddListing = () => {
     const listingToSend = listingData;
 
     axios
-      .post("http://localhost:4000/service", listingToSend)
+      .post("https://backend-five-mu-76.vercel.app/service", listingToSend)
       .then((res) => {
         console.log(res.data);
 
@@ -67,7 +69,7 @@ const AddListing = () => {
           icon: "error",
           title: "Oops...",
           text: "Something went wrong! Check the server connection.",
-          footer: "Server URL: http://localhost:4000/service",
+          footer: "Server URL: https://backend-five-mu-76.vercel.app/service",
         });
       })
       .finally(() => {
@@ -163,9 +165,9 @@ const AddListing = () => {
                 name="email"
                 placeholder="owner@example.com"
                 className="input input-bordered w-full"
-                value={listingData.email}
+                value={user?.email}
                 onChange={handleChange}
-                required
+                readOnly
               />
             </div>
           </div>

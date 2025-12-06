@@ -14,24 +14,26 @@ const Myservice = () => {
     Price: "",
     location: "",
     description: "",
-    image: "",
+    image: "",   
   });
   const { user } = useContext(AuthContext);
 
   const fetchServices = async () => {
     try {
       const res = await fetch(
-        `http://localhost:4000/mylistings?email=${user.email}`
+        `https://backend-five-mu-76.vercel.app/mylistings?email=${user.email}`
       );
       const data = await res.json();
       setMyservice(data);
       setLoading(false);
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError("Failed to load services.");
     }
   };
   useEffect(() => {
     if (user?.email) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fetchServices();
     }
   }, [user?.email]);
@@ -54,7 +56,7 @@ const Myservice = () => {
       return;
 
     try {
-      await axios.delete(`http://localhost:4000/mylistings/${serviceId}`);
+      await axios.delete(`https://backend-five-mu-76.vercel.app/mylistings/${serviceId}`);
       fetchServices();
     } catch (error) {
       console.error("Error deleting service:", error);
@@ -74,7 +76,7 @@ const Myservice = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:4000/mylistings/${serviceToEdit._id}`,
+        `https://backend-five-mu-76.vercel.app/mylistings/${serviceToEdit._id}`,
         editForm
       );
       setEditModalOpen(false);
