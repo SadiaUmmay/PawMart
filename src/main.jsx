@@ -8,7 +8,7 @@ import Home from "./Page/Home.jsx";
 import Services from "./Page/Services.jsx";
 import Login from "./Page/Login.jsx";
 import Register from "./Page/Register.jsx";
-import Forgetpass from "./Page/Forgetpass.jsx";
+
 import PrivateRoute from "./Provider/PrivateRoute.jsx";
 import Profile from "./Page/Profile.jsx";
 import Servicedetails from "./Page/Servicedetails.jsx";
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       { path: "/services", element: <Services></Services> },
       { path: "/login", element: <Login></Login> },
       { path: "/signup", element: <Register></Register> },
-      // { path: "/forget/:email", element: <Forgetpass></Forgetpass> },
+
       {
         path: "/profile",
         element: (
