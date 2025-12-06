@@ -1,9 +1,8 @@
-import React, {  useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
-
 
 const initialListingState = {
   name: "",
@@ -23,6 +22,16 @@ const AddListing = () => {
   const [listingData, setListingData] = useState(initialListingState);
   const [isLoading, setIsLoading] = useState(false);
 
+ 
+  useEffect(() => {
+    if (user?.email) {
+      setListingData((prev) => ({
+        ...prev,
+        email: user.email,
+      }));
+    }
+  }, [user]);
+
   const handleChange = (e) => {
     const { name, value, type } = e.target;
     setListingData((prevData) => ({
@@ -38,7 +47,7 @@ const AddListing = () => {
     const listingToSend = listingData;
 
     axios
-      .post("https://backend-five-mu-76.vercel.app/service", listingToSend)
+      .post("http://localhost:4000/service", listingToSend)
       .then((res) => {
         console.log(res.data);
 
@@ -51,7 +60,12 @@ const AddListing = () => {
             showConfirmButton: false,
           });
 
-          setListingData(initialListingState);
+          
+          setListingData({
+            ...initialListingState,
+            email: user?.email || "",
+          });
+
           setTimeout(() => {
             navigate("/services");
           }, 2000);
@@ -69,7 +83,7 @@ const AddListing = () => {
           icon: "error",
           title: "Oops...",
           text: "Something went wrong! Check the server connection.",
-          footer: "Server URL: https://backend-five-mu-76.vercel.app/service",
+          footer: "Server URL: http://localhost:4000/service",
         });
       })
       .finally(() => {
@@ -80,7 +94,7 @@ const AddListing = () => {
   return (
     <div className="container mx-auto p-4 max-w-2xl">
       <h2 className="text-3xl font-bold text-center mb-6 text-primary">
-        🐾 Add a New PawMart Listing
+         Add a New PawMart Listing
       </h2>
 
       <div className="card shadow-2xl bg-base-100">
@@ -100,8 +114,9 @@ const AddListing = () => {
               required
             />
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Category Select */}
+            {/* Category */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Category</span>
@@ -113,11 +128,11 @@ const AddListing = () => {
                 onChange={handleChange}
                 required
               >
-                <option >Select a category</option>
+                <option disabled>Select a category</option>
                 <option>Pets</option>
-                <option >Accessories</option>
-                <option >Food</option>
-                <option >Care Products</option>
+                <option>Accessories</option>
+                <option>Food</option>
+                <option>Care Products</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -163,10 +178,8 @@ const AddListing = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="owner@example.com"
-                className="input input-bordered w-full"
-                value={user?.email}
-                onChange={handleChange}
+                className="input input-bordered w-full bg-gray-100"
+                value={listingData.email}
                 readOnly
               />
             </div>
@@ -187,6 +200,7 @@ const AddListing = () => {
               required
             />
           </div>
+
           {/* Description */}
           <div className="form-control">
             <label className="label">
@@ -201,9 +215,10 @@ const AddListing = () => {
               required
             ></textarea>
           </div>
-         
-         
+
+          {/* Hidden Date */}
           <input type="hidden" name="date" value={listingData.date} />
+
           {/* Submit Button */}
           <div className="form-control mt-6">
             <button
