@@ -11,7 +11,7 @@ const Myorder = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:4000/orders?email=${user.email}`)
+    fetch(`https://backend-five-mu-76.vercel.app/orders?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         const userOrders = Array.isArray(data)

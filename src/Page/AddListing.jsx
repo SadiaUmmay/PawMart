@@ -47,7 +47,7 @@ const AddListing = () => {
     const listingToSend = listingData;
 
     axios
-      .post("http://localhost:4000/service", listingToSend)
+      .post("https://backend-five-mu-76.vercel.app/service", listingToSend)
       .then((res) => {
         console.log(res.data);
 
@@ -83,7 +83,7 @@ const AddListing = () => {
           icon: "error",
           title: "Oops...",
           text: "Something went wrong! Check the server connection.",
-          footer: "Server URL: http://localhost:4000/service",
+          footer: "Server URL: https://backend-five-mu-76.vercel.app/service",
         });
       })
       .finally(() => {

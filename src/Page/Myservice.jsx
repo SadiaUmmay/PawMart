@@ -26,7 +26,7 @@ const Myservice = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:4000/mylistings?email=${user.email}`
+        `https://backend-five-mu-76.vercel.app/mylistings?email=${user.email}`
       );
       const data = await res.json();
 
@@ -62,7 +62,7 @@ const Myservice = () => {
     if (!window.confirm("Are you sure you want to delete this Listing?")) return;
 
     try {
-      await axios.delete(`http://localhost:4000/mylistings/${serviceId}`);
+      await axios.delete(`https://backend-five-mu-76.vercel.app/mylistings/${serviceId}`);
       fetchServices();
     } catch (error) {
       console.error("Error deleting service:", error);
@@ -81,7 +81,7 @@ const Myservice = () => {
 
     try {
       await axios.put(
-        `http://localhost:4000/mylistings/${serviceToEdit._id}`,
+        `https://backend-five-mu-76.vercel.app/mylistings/${serviceToEdit._id}`,
         editForm
       );
 
