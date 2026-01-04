@@ -64,6 +64,19 @@ const Navbar = () => {
           Pets & Supplies
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-bold border-b-2 border-primary"
+              : "hover:text-primary transition-colors"
+          }
+        >
+          About
+        </NavLink>
+      </li>
+
 
       {/* Private Routes */}
       {user && (

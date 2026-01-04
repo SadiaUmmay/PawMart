@@ -16,6 +16,7 @@ import Servicedetails from "./Page/Servicedetails.jsx";
 import AddListing from "./Page/AddListing.jsx";
 import Myservice from "./Page/Myservice.jsx";
 import Myorder from "./Page/Myorder.jsx";
+import AboutPage from "./Page/AboutPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/about",
+        element: <AboutPage></AboutPage>
+      }
     ],
   },
 ]);

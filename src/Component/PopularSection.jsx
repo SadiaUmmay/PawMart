@@ -22,12 +22,12 @@ const PopularSection = () => {
       
       });
   }, []);
-  const top4Services = services.slice(0, 6);
+  const top4Services = services.slice(0, 8);
 
   if (loading) {
     return (
       <div className="text-center p-10 text-xl">
-        Loading popular services...
+        Loading recent listing...
       </div>
     );
   }
@@ -62,7 +62,7 @@ const PopularSection = () => {
   </div>
 
   {/* Grid Section */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     {top4Services.map((service) => (
       <div
         key={service.name}

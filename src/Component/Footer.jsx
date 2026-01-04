@@ -12,7 +12,7 @@ const Footer = () => {
           <nav className='text-white'>
             <h6 className="footer-title">Quick Links</h6>
 
-            <a className="link link-hover">About</a>
+            <Link to='/about' className="link link-hover">About</Link>
             <br />
             <a className="link link-hover">Contact</a>
             <br />
