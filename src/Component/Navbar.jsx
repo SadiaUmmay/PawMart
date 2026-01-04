@@ -76,6 +76,18 @@ const Navbar = () => {
           About
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-bold border-b-2 border-primary"
+              : "hover:text-primary transition-colors"
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
 
 
       {/* Private Routes */}

@@ -178,25 +178,7 @@ const FAQ = () => {
           ))}
         </div>
 
-        {/* Still Have Questions */}
-        <div className="mt-12 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8 text-center border border-base-300">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
-            <p className="text-base-content/70 mb-6">
-              Can't find the answer you're looking for? Our support team is here to help!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn btn-primary btn-lg rounded-full px-8">
-                <span className="text-xl mr-2">💬</span>
-                Chat with Support
-              </button>
-              <button className="btn btn-outline btn-primary btn-lg rounded-full px-8">
-                <span className="text-xl mr-2">📞</span>
-                Call Us Now
-              </button>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );

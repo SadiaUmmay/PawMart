@@ -17,6 +17,7 @@ import AddListing from "./Page/AddListing.jsx";
 import Myservice from "./Page/Myservice.jsx";
 import Myorder from "./Page/Myorder.jsx";
 import AboutPage from "./Page/AboutPage.jsx";
+import ContactPage from "./Page/ContactPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage></AboutPage>
+      },
+      {
+        path: "/contact",
+        element: <ContactPage></ContactPage>
       }
     ],
   },
