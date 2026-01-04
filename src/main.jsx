@@ -1,13 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-<<<<<<< HEAD
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
-import AuthProvider from "./Provider/AuthProvider.jsx"; 
-=======
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AuthProvider from "./Provider/AuthProvider.jsx";
->>>>>>> 701b5fc1f4c02c5b7d748b358088a3b1a44e7868
+
 import Root from "./Root/Root.jsx";
 import Home from "./Page/Home.jsx";
 import Services from "./Page/Services.jsx";
@@ -24,60 +20,50 @@ import Myorder from "./Page/Myorder.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <Root />,
     children: [
-      { path: "/", element: <Home></Home> },
-      { path: "/services", element: <Services></Services> },
-      { path: "/login", element: <Login></Login> },
-      { path: "/signup", element: <Register></Register> },
+      { path: "/", element: <Home /> },
+      { path: "/services", element: <Services /> },
+      { path: "/login", element: <Login /> },
+      { path: "/signup", element: <Register /> },
 
       {
         path: "/profile",
         element: (
           <PrivateRoute>
-            <Profile></Profile>
+            <Profile />
           </PrivateRoute>
         ),
       },
       {
         path: "/service/:id",
         element: (
-          <PrivateRoute>
+         
             <Servicedetails />
-          </PrivateRoute>
+         
         ),
       },
       {
-<<<<<<< HEAD
-        
-=======
-       
->>>>>>> 701b5fc1f4c02c5b7d748b358088a3b1a44e7868
         path: "/servicedetails/:id",
         element: (
-          <PrivateRoute>
+         
             <Servicedetails />
-          </PrivateRoute>
+         
         ),
       },
       {
-<<<<<<< HEAD
-        
-=======
-      
->>>>>>> 701b5fc1f4c02c5b7d748b358088a3b1a44e7868
         path: "/servicedetails",
         element: (
-          <PrivateRoute>
-            <Servicedetails></Servicedetails>
-          </PrivateRoute>
+        
+            <Servicedetails />
+          
         ),
       },
       {
         path: "/addlisting",
         element: (
           <PrivateRoute>
-            <AddListing></AddListing>
+            <AddListing />
           </PrivateRoute>
         ),
       },
@@ -85,7 +71,7 @@ const router = createBrowserRouter([
         path: "/mylistings",
         element: (
           <PrivateRoute>
-            <Myservice></Myservice>
+            <Myservice />
           </PrivateRoute>
         ),
       },
@@ -93,7 +79,7 @@ const router = createBrowserRouter([
         path: "/myorder",
         element: (
           <PrivateRoute>
-            <Myorder></Myorder>
+            <Myorder />
           </PrivateRoute>
         ),
       },
