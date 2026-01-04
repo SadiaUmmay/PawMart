@@ -196,7 +196,7 @@ const Navbar = () => {
                 <Link to="/mylistings">My Listings</Link>
               </li>
               <li>
-                <Link to="/my-orders">My Orders</Link>
+                <Link to="/myorder">My Orders</Link>
               </li>
               <li className="divider my-1"></li>
               <li>

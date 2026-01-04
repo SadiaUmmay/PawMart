@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; // fixed import
-import AuthProvider from "./Provider/AuthProvider.jsx"; // import your provider
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import AuthProvider from "./Provider/AuthProvider.jsx"; 
 import Root from "./Root/Root.jsx";
 import Home from "./Page/Home.jsx";
 import Services from "./Page/Services.jsx";
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        // Add this new route to handle /servicedetails/:id
+        
         path: "/servicedetails/:id",
         element: (
           <PrivateRoute>
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        // Remove this one or keep it if you need a list view
+        
         path: "/servicedetails",
         element: (
           <PrivateRoute>

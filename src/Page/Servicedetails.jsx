@@ -17,7 +17,7 @@ const Servicedetails = () => {
     const fetchService = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`https://backend-five-mu-76.vercel.app/service/${id}`);
+        const res = await axios.get(`https://backend-as-10-mu-76.vercel.app/service/${id}`);
 
         if (!res.data || res.data.error) {
           setError("Service not found");
@@ -66,7 +66,7 @@ const Servicedetails = () => {
     console.log("Sending request data:", requestData);
 
     try {
-      const response = await fetch("https://backend-five-mu-76.vercel.app/orders", {
+      const response = await fetch("https://backend-as-10-mu-76.vercel.app/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestData),
@@ -125,7 +125,7 @@ const Servicedetails = () => {
 
   return (
     <div className="bg-base-100 p-4 md:p-8">
-      <div className="w-2xl mx-auto">
+      <div className=" mx-auto">
         <div className="bg-base-100 rounded-xl shadow-lg overflow-hidden border border-base-300">
           {/* Image */}
           <div className="">
@@ -142,7 +142,7 @@ const Servicedetails = () => {
           </div>
 
           {/* Content */}
-          <div className="p-6 md:p-8">
+          <div className="p-4 md:p-8">
 
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
               <div>
