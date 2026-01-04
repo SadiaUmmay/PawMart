@@ -1,8 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+<<<<<<< HEAD
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
 import AuthProvider from "./Provider/AuthProvider.jsx"; 
+=======
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AuthProvider from "./Provider/AuthProvider.jsx";
+>>>>>>> 701b5fc1f4c02c5b7d748b358088a3b1a44e7868
 import Root from "./Root/Root.jsx";
 import Home from "./Page/Home.jsx";
 import Services from "./Page/Services.jsx";
@@ -43,7 +48,11 @@ const router = createBrowserRouter([
         ),
       },
       {
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> 701b5fc1f4c02c5b7d748b358088a3b1a44e7868
         path: "/servicedetails/:id",
         element: (
           <PrivateRoute>
@@ -52,7 +61,11 @@ const router = createBrowserRouter([
         ),
       },
       {
+<<<<<<< HEAD
         
+=======
+      
+>>>>>>> 701b5fc1f4c02c5b7d748b358088a3b1a44e7868
         path: "/servicedetails",
         element: (
           <PrivateRoute>
